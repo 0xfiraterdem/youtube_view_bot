@@ -81,7 +81,7 @@ def start():
         chrome = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
         chrome.get(url_input.get())
         try:
-            click_button_play = chrome.find_element("xpath", "//*[@id='movie_player']/div[5]/button")
+            click_button_play = chrome.find_element(By.CSS_SELECTOR, "#movie_player > div.ytp-cued-thumbnail-overlay > button")
             click_button_play.click()
             click_button_mute = chrome.find_element(By.CSS_SELECTOR,"#movie_player > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-left-controls > span > button")
             click_button_mute.click()
