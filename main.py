@@ -51,14 +51,14 @@ def filter():
 def start():
     dur = dur_entry.get()
     loop = loop_entry.get()
-    if not dur.isdigit():
-        MessageBox.showinfo("Uyarı", "Süre sayı olamlıdır...")
+    if not dur.isdigit() or not loop.isdigit():
+        MessageBox.showinfo("Uyarı", "Süre ve İzlenme sayısı sayı olamlıdır...")
         return
     if url_input.get() =='':
         MessageBox.showinfo("Uyarı", "Lütfen youtube video linkini giriniz...")
         return
-    if loop == "":
-        MessageBox.showinfo("Uyarı", "Lütfen videonun kaç kere izlenmesini istediğinizi belirtiniz.")
+    if loop == "" or dur == "":
+        MessageBox.showinfo("Uyarı", "Süre ve İzlenme sayısı boş bırakılamaz...")
         return
     dur = int(dur)
     loop = int(loop)
